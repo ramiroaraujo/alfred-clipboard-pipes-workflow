@@ -2,3 +2,6 @@ workflow/.bundle
 workflow/bundle
 .idea/workspace.xml
 .idea/tasks.xml
+workflow/pipes/*
+!workflow/pipes
+!workflow/pipes/empty

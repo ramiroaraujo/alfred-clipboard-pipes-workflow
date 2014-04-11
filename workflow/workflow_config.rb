@@ -55,7 +55,7 @@ class WorkflowConfig
 
     filename = get_file_name_from_key name
 
-    File.open('pipes/' + filename + '.sh', 'w') { |file| file.write(code) }
+    File.open('pipes/' + filename + '.sh', 'w', 0744) { |file| file.write(code) }
 
     @config[:pipes] << { :name => name, :key => filename }
     refresh_pipes

@@ -18,3 +18,10 @@
 - :name: Base 64 encode
   :key: base-64-encode
   :code: openssl base64 -e
+- :name: JSON format
+  :key: json-format
+  :code: 'python -c "import json,sys; print json.dumps(json.load(sys.stdin),indent=4,separators=('','','':
+    ''))"'
+- :name: Reverse text
+  :key: reverse-text
+  :code: sed '1!G;h;d'
