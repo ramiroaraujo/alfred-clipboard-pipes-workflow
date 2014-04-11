@@ -1,0 +1,20 @@
+---
+:pipes:
+- :name: Change case - lowercase
+  :key: change-case-lowercase
+  :code: perl -nle 'print lc'
+- :name: Change case - uppercase
+  :key: change-case-uppercase
+  :code: perl -nle 'print uc'
+- :name: Change case - capitalize
+  :key: change-case-capitalize
+  :code: ruby -ne 'print $_.split(%Q{ }).map(&:capitalize).join(%Q{ })'
+- :name: Change case - titlecase
+  :key: change-case-titlecase
+  :code: perl scripts/titlecase.pl
+- :name: Base 64 decode
+  :key: base-64-decode
+  :code: openssl base64 -d
+- :name: Base 64 encode
+  :key: base-64-encode
+  :code: openssl base64 -e
