@@ -200,9 +200,9 @@
 			<key>config</key>
 			<dict>
 				<key>argumenttype</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>escaping</key>
-				<integer>4</integer>
+				<integer>100</integer>
 				<key>keyword</key>
 				<string>configpipe</string>
 				<key>runningsubtext</key>
@@ -227,7 +227,7 @@
 			<key>config</key>
 			<dict>
 				<key>escaping</key>
-				<integer>4</integer>
+				<integer>100</integer>
 				<key>script</key>
 				<string>/usr/bin/ruby config.rb "{query}"</string>
 				<key>type</key>

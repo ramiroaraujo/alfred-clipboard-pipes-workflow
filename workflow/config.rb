@@ -12,6 +12,8 @@ case command
 
     # calculates wether delete or error
     exists = /^edit/ =~ content
+
+    # @todo borrar temp si existe
     unless exists
       `/usr/bin/afplay /System/Library/Sounds/Funk.aiff`
       exit 1

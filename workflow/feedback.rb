@@ -20,7 +20,7 @@ Alfred.with_friendly_error do |alfred|
     search.each do |pipe|
       fb.add_item({
           :title => pipe[:name],
-          :subtitle => "Pipe clipboard through #{pipe[:code]}",
+          :subtitle => pipe[:code],
           :arg => pipe[:key],
           :valid => 'yes',
       })

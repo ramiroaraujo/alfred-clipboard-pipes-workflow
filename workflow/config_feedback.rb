@@ -5,6 +5,7 @@ require 'rubygems' unless defined? Gem # rubygems is only needed in 1.8
 require_relative 'bundle/bundler/setup'
 require 'alfred'
 require_relative 'workflow_config'
+#require 'base64'
 
 query = ARGV[0] || ''
 
@@ -38,7 +39,7 @@ Alfred.with_friendly_error do |alfred|
     search.each do |p|
       fb.add_item({
           :title => p[:name],
-          :subtitle => 'Action to edit, Alt+action to delete',
+          :subtitle => "#{p[:code]}. Edit, Alt+action to delete",
           :arg => "edit|#{p[:key]}",
           :valid => 'yes',
       })
