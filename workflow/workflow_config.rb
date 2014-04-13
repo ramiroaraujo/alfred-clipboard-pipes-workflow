@@ -85,9 +85,9 @@ class WorkflowConfig
     @pipe_keys = @config[:pipes].map { |pipe| pipe[:key] }
   end
 
-  def refresh_pipes
+  def refresh_pipes(force)
     @config[:pipes].each do |pipe|
-      next if pipe.key?(:code)
+      next if pipe.key?(:code) && !force
       code = File.read "pipes/#{pipe[:key]}.sh"
       code.strip!
       code = code.lines[1..-1].join(' \ ') if /^#!/ =~ code

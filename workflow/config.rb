@@ -10,23 +10,19 @@ command, content = ARGV.join(' ').split('|', 2)
 case command
   when 'delete'
 
-    # calculates wether delete or error
-    exists = /^edit/ =~ content
-
-    # @todo borrar temp si existe
-    unless exists
-      `/usr/bin/afplay /System/Library/Sounds/Funk.aiff`
-      exit 1
+    # deletes the pipe or temp
+    command, content = content.split('|', 2)
+    if command == 'edit-code'
+      pipe = config.get_pipe(content)
+      config.remove_pipe(content)
+      puts pipe[:name]
+      exit 0
+    else
+      File.delete 'temp'
+      exit 0
     end
 
-    # deletes the pipe
-    noop, content = content.split('|', 2)
-    pipe = config.get_pipe(content)
-    config.remove_pipe(content)
-    puts pipe[:name]
-    exit 0
-
-  when 'edit'
+  when 'edit-code'
 
     pipe = config.get_pipe(content)
     `open pipes/#{pipe[:key]}.sh`
@@ -41,4 +37,4 @@ case command
     print name
 end
 
-config.refresh_pipes
+config.refresh_pipes(true)

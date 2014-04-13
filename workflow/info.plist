@@ -37,6 +37,14 @@
 			</dict>
 			<dict>
 				<key>destinationuid</key>
+				<string>FCA10922-D78B-4338-88C4-D5EF9D2A5021</string>
+				<key>modifiers</key>
+				<integer>131072</integer>
+				<key>modifiersubtext</key>
+				<string>edit title</string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
 				<string>9F87CE64-3FE0-4888-80FD-8685BA720525</string>
 				<key>modifiers</key>
 				<integer>524288</integer>
@@ -96,6 +104,17 @@
 				<string></string>
 			</dict>
 		</array>
+		<key>FCA10922-D78B-4338-88C4-D5EF9D2A5021</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E9039CB7-F9FD-4F04-87CB-6A9495A559DE</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
 	</dict>
 	<key>createdby</key>
 	<string>Ramiro Araujo</string>
@@ -133,23 +152,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>escaping</key>
-				<integer>4</integer>
-				<key>script</key>
-				<string>/usr/bin/ruby pipeit.rb "{query}"</string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>3C8D9554-026B-4692-9D4B-02270990ADB1</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>autopaste</key>
 				<false/>
 				<key>clipboardtext</key>
@@ -167,6 +169,23 @@
 			<dict>
 				<key>escaping</key>
 				<integer>4</integer>
+				<key>script</key>
+				<string>/usr/bin/ruby pipeit.rb "{query}"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>3C8D9554-026B-4692-9D4B-02270990ADB1</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
 				<key>script</key>
 				<string>tell application "Alfred 2" to search "| "</string>
 				<key>type</key>
@@ -193,6 +212,23 @@
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
 			<string>5B5C5AAE-4B54-4052-9409-442F0E2DADFA</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>100</integer>
+				<key>script</key>
+				<string>/usr/bin/ruby config.rb "{query}"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>B3478C09-5747-4A9A-A843-1200F038EB33</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -226,23 +262,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>escaping</key>
-				<integer>100</integer>
-				<key>script</key>
-				<string>/usr/bin/ruby config.rb "{query}"</string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>B3478C09-5747-4A9A-A843-1200F038EB33</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>lastpathcomponent</key>
 				<false/>
 				<key>onlyshowifquerypopulated</key>
@@ -253,8 +272,10 @@
 				<false/>
 				<key>sticky</key>
 				<false/>
+				<key>text</key>
+				<string>{query}</string>
 				<key>title</key>
-				<string>Created {query}</string>
+				<string>Created pipe</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.output.notification</string>
@@ -269,7 +290,7 @@
 				<key>lastpathcomponent</key>
 				<false/>
 				<key>onlyshowifquerypopulated</key>
-				<true/>
+				<false/>
 				<key>output</key>
 				<integer>0</integer>
 				<key>removeextension</key>
@@ -277,12 +298,29 @@
 				<key>sticky</key>
 				<false/>
 				<key>title</key>
-				<string>Deleted {query}</string>
+				<string>Edited pipe</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.output.notification</string>
 			<key>uid</key>
-			<string>EC9954BD-D067-4155-BA12-09C25D170BDA</string>
+			<string>E9039CB7-F9FD-4F04-87CB-6A9495A559DE</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>/usr/bin/ruby config.rb "edit-name|{query}"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>FCA10922-D78B-4338-88C4-D5EF9D2A5021</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -300,6 +338,31 @@
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
 			<string>9F87CE64-3FE0-4888-80FD-8685BA720525</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Deleted pipe</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>EC9954BD-D067-4155-BA12-09C25D170BDA</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -341,7 +404,7 @@
 		<key>9F87CE64-3FE0-4888-80FD-8685BA720525</key>
 		<dict>
 			<key>ypos</key>
-			<real>370</real>
+			<real>490</real>
 		</dict>
 		<key>A3282E2A-9DA5-4F27-BF9C-F761705C6A82</key>
 		<dict>
@@ -353,7 +416,17 @@
 			<key>ypos</key>
 			<real>250</real>
 		</dict>
+		<key>E9039CB7-F9FD-4F04-87CB-6A9495A559DE</key>
+		<dict>
+			<key>ypos</key>
+			<real>370</real>
+		</dict>
 		<key>EC9954BD-D067-4155-BA12-09C25D170BDA</key>
+		<dict>
+			<key>ypos</key>
+			<real>490</real>
+		</dict>
+		<key>FCA10922-D78B-4338-88C4-D5EF9D2A5021</key>
 		<dict>
 			<key>ypos</key>
 			<real>370</real>

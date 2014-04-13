@@ -40,7 +40,7 @@ Alfred.with_friendly_error do |alfred|
       fb.add_item({
           :title => p[:name],
           :subtitle => "#{p[:code]}. Edit, Alt+action to delete",
-          :arg => "edit|#{p[:key]}",
+          :arg => "edit-code|#{p[:key]}",
           :valid => 'yes',
       })
     end
