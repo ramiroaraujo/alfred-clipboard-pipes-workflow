@@ -40,3 +40,5 @@ case command
     name = config.add_pipe_code(content)
     print name
 end
+
+config.refresh_pipes
