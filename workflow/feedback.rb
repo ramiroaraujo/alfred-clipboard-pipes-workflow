@@ -13,6 +13,8 @@ Alfred.with_friendly_error do |alfred|
   fb = alfred.feedback
   config = WorkflowConfig.new
 
+  # @todo see if feasible to implement basic parameters
+
   # list new ones, filtered
   search = config.search_pipes(query)
 
