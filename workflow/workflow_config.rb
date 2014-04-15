@@ -90,7 +90,8 @@ class WorkflowConfig
       next if pipe.key?(:code) && !force
       code = File.read "pipes/#{pipe[:key]}.sh"
       code.strip!
-      code = code.lines[1..-1].join(' \ ') if /^#!/ =~ code
+      code = code.lines[1..-1].join("\n") if /^#!/ =~ code
+      code = code.split("\n").join(' \ ')
       code = "#{code[0..100]}..." if code.length > 100
       pipe[:code] = code
     end
