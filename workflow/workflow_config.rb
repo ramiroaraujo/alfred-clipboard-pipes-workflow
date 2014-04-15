@@ -58,7 +58,7 @@ class WorkflowConfig
     File.open('pipes/' + filename + '.sh', 'w', 0744) { |file| file.write(code) }
 
     @config[:pipes] << { :name => name, :key => filename }
-    refresh_pipes
+    refresh_pipes(false)
     name
   end
 
@@ -73,7 +73,7 @@ class WorkflowConfig
   def load_config
     @config = YAML.load(File.open('config.yml'))
 
-    refresh_pipes unless @config[:pipes].all? { |pipe| pipe.key?(:code) }
+    refresh_pipes(false) unless @config[:pipes].all? { |pipe| pipe.key?(:code) }
 
     @pipes = @config[:pipes]
     @pipe_keys = @config[:pipes].map { |pipe| pipe[:key] }
@@ -88,7 +88,15 @@ class WorkflowConfig
   def refresh_pipes(force)
     @config[:pipes].each do |pipe|
       next if pipe.key?(:code) && !force
+
+      # reads file
       code = File.read "pipes/#{pipe[:key]}.sh"
+
+      # checks for parameters
+      params = code.scan(/\{([a-z0-9\-]+?)\}/).map { |s| s[0]}
+      pipe[:params] = params.count > 0 ? params : []
+
+      # formats code
       code.strip!
       code = code.lines[1..-1].join("\n") if /^#!/ =~ code
       code = code.split("\n").join(' \ ')
@@ -106,3 +114,6 @@ class WorkflowConfig
   private :load_config, :save_config, :initialize
 
 end
+
+workflow_config = WorkflowConfig.new
+workflow_config.refresh_pipes true
