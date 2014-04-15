@@ -30,7 +30,7 @@ case command
   when 'create-name'
 
     config.add_pipe_name(content)
-    `osascript -e 'tell application "Alfred 2" to search "configpipe "'`
+    `osascript -e 'tell application "Alfred 2" to search "_configpipe "'`
 
   when 'create-code'
     name = config.add_pipe_code(content)

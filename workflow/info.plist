@@ -63,6 +63,25 @@
 				<string></string>
 			</dict>
 		</array>
+		<key>5A0AA5A2-A8D6-4B20-B37B-D77A6F40C4A3</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>3C8D9554-026B-4692-9D4B-02270990ADB1</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>5B5C5AAE-4B54-4052-9409-442F0E2DADFA</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>and then pipe some more</string>
+			</dict>
+		</array>
 		<key>5B5C5AAE-4B54-4052-9409-442F0E2DADFA</key>
 		<array>
 			<dict>
@@ -184,6 +203,29 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>4</integer>
+				<key>keyword</key>
+				<string>_|</string>
+				<key>script</key>
+				<string>/usr/bin/ruby parameters.rb "{query}"</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>5A0AA5A2-A8D6-4B20-B37B-D77A6F40C4A3</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
@@ -240,7 +282,7 @@
 				<key>escaping</key>
 				<integer>100</integer>
 				<key>keyword</key>
-				<string>configpipe</string>
+				<string>_configpipe</string>
 				<key>runningsubtext</key>
 				<string>working...</string>
 				<key>script</key>
@@ -385,6 +427,11 @@
 		<dict>
 			<key>ypos</key>
 			<real>10</real>
+		</dict>
+		<key>5A0AA5A2-A8D6-4B20-B37B-D77A6F40C4A3</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
 		</dict>
 		<key>5B5C5AAE-4B54-4052-9409-442F0E2DADFA</key>
 		<dict>

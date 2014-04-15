@@ -21,6 +21,7 @@ Alfred.with_friendly_error do |alfred|
   if search.length
     search.each do |pipe|
       fb.add_item({
+          :uid => pipe[:code],
           :title => pipe[:name],
           :subtitle => pipe[:code],
           :arg => pipe[:key],
